@@ -5,7 +5,8 @@ faxes = interfax.inbound.all(
 
 faxes.each do |fax|
   # save the fax image
-  fax.image.save("#{fax.messageId}.tiff")
+  image = fax.image
+  image.save("#{fax.messageId}.#{image.extension}")
   # # mark as read
   fax.mark(read: true)
 end
