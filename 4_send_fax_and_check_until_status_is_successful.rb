@@ -10,7 +10,7 @@ loop do
   fax = fax.reload
   # sleep if pending
   if fax.status < 0
-    sleep(1)
+    sleep(10)
   else
     # output on success or error
     if fax.status == 0
